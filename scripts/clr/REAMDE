@@ -1,0 +1,14 @@
+Hi
+
+This is a simple readme for the scripts I have to clone and build an entire OS
+yea Iknow it sounds hard but it isn't: 
+
+YOu just need to specify the url of the gits you have to clone ( already on the
+os_build.sh 
+
+Then yuu need to specify the bundle you want: 
+
+./os_build.sh <bundlefile>
+
+Be carefull and clean the bundle files, check that the file correspond with the
+name of the git repo of not.. you will download all the repos :) 
