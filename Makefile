@@ -36,10 +36,13 @@ uninstall:
 
 clean:
 	-rm -f $(OBJECTS)
-	# -rm -f gmon.out
+	-rm -f perf.data*
+	-rm -f demo.afdo*
+	-rm -f *.gcda
 
 distclean: clean
 	-rm -f $(TARGET)
+	-rm -f $(TARGET)_*
 
 default:
 	gcc main.c bubble_sort.c pi_calculation.c matrix_multiplication.c -lm -o demo
@@ -51,17 +54,17 @@ remove:
 	rm -rf *.gcda
 
 optimized:
-	gcc hello_world.c -o demo_optimized -O3
+	$(CC) $(FLAGS) $(LIBS) -O3 $(SOURCES) -o demo_optimized
 
 normalfdo:
-	gcc -g3 hello_world.c -o demo_instrumented -fprofile-generate
+	$(CC) -g3 $(FLAGS) $(LIBS) $(SOURCES) -o demo_instrumented -fprofile-generate
 	./demo_instrumented
-	gcc -O3 hello_world.c -o demo_normalfdo -fprofile-use=hello_world.gcda
+	$(CC) $(FLAGS) $(LIBS) -O3 $(SOURCES) -o demo_normalfdo -fprofile-use
 
-autofdo:
-	~/pmu-tools-r100/ocperf.py record -b -e br_inst_retired.near_taken -- ./demo
+autofdo: $(TARGET)
+	~/pmu-tools/ocperf.py record -b -e br_inst_retired.near_taken -- ./demo
 	/tmp/autofdo/create_gcov --binary=./demo --profile=perf.data --gcov=demo.afdo -gcov_version=1
-	gcc -O3 -fauto-profile=demo.afdo main.c -o demo_autofdo
+	$(CC) $(FLAGS) $(LIBS) -O3 -fauto-profile=demo.afdo $(SOURCES) -o demo_autofdo
 
 # .SECONDEXPANSION:
  
