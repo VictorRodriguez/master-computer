@@ -1,6 +1,31 @@
+SHELL = /bin/sh
+CC    = gcc
+ 
+FLAGS        = -std=gnu99 -Iinclude
+CFLAGS       = -pedantic -Wall -Wextra -march=native -ggdb3
+DEBUGFLAGS   = -O0 -D _DEBUG
+RELEASEFLAGS = -O2 -D NDEBUG -combine -fwhole-program
+ 
+TARGET  = demo
+SOURCES = $(shell echo src/*.c)
+COMMON  = include/definitions.h include/debug.h
+HEADERS = $(shell echo include/*.h)
+OBJECTS = $(SOURCES:.c=.o)
+ 
+PREFIX = $(DESTDIR)/usr/local
+BINDIR = $(PREFIX)/bin
+ 
+ 
+all: $(TARGET)
+ 
+$(TARGET): $(OBJECTS) $(COMMON)
+	$(CC) $(FLAGS) $(CFLAGS) $(DEBUGFLAGS) -o $(TARGET) $(OBJECTS)
 
-all:
-	gcc hello_world.c -o demo
+release: $(SOURCES) $(HEADERS) $(COMMON)
+	$(CC) $(FLAGS) $(CFLAGS) $(RELEASEFLAGS) -o $(TARGET) $(SOURCES)
+
+default:
+	gcc main.c bubble_sort.c pi_calculation.c matrix_multiplication.c -lm -o demo
 clean:
 	rm -rf demo*
 	rm -rf *.data*
