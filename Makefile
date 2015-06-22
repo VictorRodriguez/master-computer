@@ -13,7 +13,7 @@ optimized:
 normalfdo:
 	gcc -g3 hello_world.c -o demo_instrumented -fprofile-generate
 	./demo_instrumented
-	gcc hello_world.c -o demo_normalfdo -fprofile-use -freorder-blocks-and-partition -O3 -fprofile-correction -Wno-coverage-mismatch
+	gcc -O3 hello_world.c -o demo_normalfdo -fprofile-use=hello_world.gcda
 
 autofdo:
 	~/pmu-tools-r100/ocperf.py record -b -e br_inst_retired.near_taken -- ./demo
