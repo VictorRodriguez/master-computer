@@ -2,6 +2,8 @@
 #include <time.h>
 #include <stdlib.h>
 #include "matrix_multiplication.h"
+#include "definitions.h"
+#include "debug.h"
 
 void multiply_matrix(int size){
 	printf("Multiplying matrix of %dx%d\n", size, size);
@@ -42,4 +44,11 @@ void multiply_matrix(int size){
 
 	  // printf("\n");
 	}
+}
+
+int main(){
+	start();
+	multiply_matrix(MATRIX_SIZE);
+	stop();
+	return 0;
 }

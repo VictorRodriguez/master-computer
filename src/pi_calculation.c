@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 #include "pi_calculation.h"
+#include "definitions.h"
+#include "debug.h"
 
 void calculate_pi_1(int size){
 	printf("Calculating PI method 1 with %d digits \n", size);
@@ -86,4 +88,13 @@ void calculate_pi_2(int size){
 
     //printf("\n");
 
+}
+
+
+int main(){
+	start();
+	calculate_pi_1(PI_LEN_MIN);
+	calculate_pi_2(PI_LEN_MAX);
+	stop();
+	return 0;
 }

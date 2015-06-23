@@ -7,23 +7,28 @@ LIBS         = -lm
 DEBUGFLAGS   = -O0 -D _DEBUG
 RELEASEFLAGS = -O3 -D NDEBUG
 
-TARGET  = demo
 SOURCES = $(shell echo src/*.c)
 COMMON  = include/definitions.h include/debug.h
 HEADERS = $(shell echo include/*.h)
 OBJECTS = $(SOURCES:.c=.o)
+COBJECTS= src/debug.o
+CSOURCES= src/debug.c
+BINARIES= bubble_sort matrix_multiplication pi_calculation
 
 PREFIX = $(DESTDIR)/usr/local
 BINDIR = $(PREFIX)/bin
 
 
-all: $(TARGET)
+all: $(BINARIES)
 
-$(TARGET): $(OBJECTS) $(COMMON)
-	$(CC) $(FLAGS) $(CFLAGS) $(LIBS) $(DEBUGFLAGS) -o $(TARGET) $(OBJECTS)
+# $(TARGET): src/main.o $(OBJECTS) $(COMMON)
+# 	$(CC) $(FLAGS) $(CFLAGS) $(LIBS) $(DEBUGFLAGS) -o $@ $(OBJECTS)
 
-release: $(SOURCES) $(HEADERS) $(COMMON)
-	$(CC) $(FLAGS) $(CFLAGS) $(LIBS) $(RELEASEFLAGS) -o $(TARGET) $(SOURCES)
+# release: $(SOURCES) $(HEADERS) $(COMMON)
+# 	$(CC) $(FLAGS) $(CFLAGS) $(LIBS) $(RELEASEFLAGS) -o $(TARGET) $(SOURCES)
+
+release: $(SOURCES) $(HEADERS) $(COMMON) $(CSOURCES)
+	$(foreach BINARY,$(BINARIES),$(CC) $(FLAGS) $(CFLAGS) $(LIBS) $(RELEASEFLAGS) -o $(BINARY) src/$(BINARY).c $(CSOURCES);)
 
 install: release
 	install -D $(TARGET) $(BINDIR)/$(TARGET)
@@ -41,8 +46,7 @@ clean:
 	-rm -f *.gcda
 
 distclean: clean
-	-rm -f $(TARGET)
-	-rm -f $(TARGET)_*
+	-rm -f $(BINARIES)
 
 default:
 	gcc main.c bubble_sort.c pi_calculation.c matrix_multiplication.c -lm -o demo
@@ -61,18 +65,26 @@ normalfdo:
 	./demo_instrumented
 	$(CC) $(FLAGS) $(LIBS) -O3 $(SOURCES) -o demo_normalfdo -fprofile-use
 
-autofdo: $(TARGET)
-	~/pmu-tools/ocperf.py record -b -e br_inst_retired.near_taken -- ./demo
-	/tmp/autofdo/create_gcov --binary=./demo --profile=perf.data --gcov=demo.afdo -gcov_version=1
-	$(CC) $(FLAGS) $(LIBS) -O3 -fauto-profile=demo.afdo $(SOURCES) -o demo_autofdo
+# autofdo: $(BINARIES)
+# 	~/pmu-tools/ocperf.py record -b -e br_inst_retired.near_taken -- ./demo
+# 	/tmp/autofdo/create_gcov --binary=./demo --profile=perf.data --gcov=demo.afdo -gcov_version=1
+# 	$(CC) $(FLAGS) $(LIBS) -O3 -fauto-profile=demo.afdo $(SOURCES) -o demo_autofdo
 
-# .SECONDEXPANSION:
- 
-# $(foreach OBJ,$(OBJECTS),$(eval $(OBJ)_DEPS = $(shell gcc -MM $(OBJ:.o=.c) | sed s/.*://)))
-# %.o: %.c $$($$@_DEPS)
-# 	$(CC) $(FLAGS) $(CFLAGS) $(LIBS) $(DEBUGFLAGS) -c -o $@ $<
- 
+autofdo: $(BINARIES)
+	$(foreach BINARY,$(BINARIES),~/pmu-tools/ocperf.py record -b -e br_inst_retired.near_taken -- ./$(BINARY);/tmp/autofdo/create_gcov --binary=./$(BINARY) --profile=perf.data --gcov=$(BINARY).afdo -gcov_version=1;$(CC) $(FLAGS) $(LIBS) -O3 -fauto-profile=$(BINARY).afdo src/$(BINARY).c $(CSOURCES) -o $(BINARY)_autofdo)
+
+bubble_sort: src/bubble_sort.o $(COBJECTS) $(HEADERS) $(COMMON)
+	$(CC) $(FLAGS) $(CFLAGS) $(LIBS) $(DEBUGFLAGS) -o $@ $< $(COBJECTS)
+
+matrix_multiplication: src/matrix_multiplication.o $(COBJECTS) $(HEADERS) $(COMMON)
+	$(CC) $(FLAGS) $(CFLAGS) $(LIBS) $(DEBUGFLAGS) -o $@ $< $(COBJECTS)
+
+pi_calculation: src/pi_calculation.o $(COBJECTS) $(HEADERS) $(COMMON)
+	$(CC) $(FLAGS) $(CFLAGS) $(LIBS) $(DEBUGFLAGS) -o $@ $< $(COBJECTS)
+
 %.o: %.c $(HEADERS) $(COMMON)
 	$(CC) $(FLAGS) $(CFLAGS) $(DEBUGFLAGS) -c -o $@ $<
 
-.PHONY : all profile release install install-strip uninstall clean distclean
+
+
+.PHONY : all release install install-strip uninstall clean distclean

@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include "bubble_sort.h"
+#include "definitions.h"
+#include "debug.h"
 
 void bubble_sort (int *a, int n) {
     int i, t, s = 1;
@@ -25,4 +27,13 @@ void generate_array(int *buffer, int len){
 	for(i = 0; i < len; ++i)
 		buffer[i] = rand();
 	bubble_sort(buffer, len);
+}
+
+int main(){
+    start();
+    int array[ARRAY_LEN];
+    generate_array(array, ARRAY_LEN);
+    bubble_sort(array, ARRAY_LEN);
+    stop();
+    return 0;
 }
