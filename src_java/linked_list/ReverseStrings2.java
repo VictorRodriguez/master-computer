@@ -15,9 +15,9 @@ public class ReverseStrings2
     Scanner conIn = new Scanner(System.in);
 
     //Stack<String> stack = new Stack<String>();
-    UnboundedStackInterface<String> stack = new ArrayListStack<String>();
+    //UnboundedStackInterface<String> stack = new ArrayListStack<String>();
+    UnboundedStackInterface<String> stack = new LinkedStack<String>();
 
-    
     String line;
     
     for (int i = 1; i <= 3; i++)

@@ -5,9 +5,6 @@
 // to hold the stack elements.
 //-----------------------------------------------------------------------
 
-package ch03.stacks;
-
-import support.LLNode;
 
 public class LinkedStack<T> implements UnboundedStackInterface<T>
 {
