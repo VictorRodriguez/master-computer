@@ -5,7 +5,6 @@
 // hold the stack elements.
 //----------------------------------------------------------------------
 
-package ch03.stacks;
 
 import java.util.*;
 

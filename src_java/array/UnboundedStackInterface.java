@@ -5,7 +5,6 @@
 // on the size of the stack. A stack is a last-in, first-out structure.
 //----------------------------------------------------------------------------
 
-package ch03.stacks;
 
 public interface UnboundedStackInterface<T> extends StackInterface<T>
 
