@@ -1,0 +1,21 @@
+<<<<<<< HEAD:automatadeterminist.csv
+State,Transition_a,Transition_b
+1,2,3
+2,4,5
+3,6,7
+4,4,5
+5,6,7
+6,4,5
+7,6,7
+=======
+State,Transition_0,Transition_1
+1,2,3
+2,4,9
+3,5,4
+4,6,4
+5,5,7
+6,9,7
+7,8,5
+8,7,6
+9,9,8
+>>>>>>> dfaecec82506c42a98090a7713458cebb4d9db67:tests/automatadeterminist.csv

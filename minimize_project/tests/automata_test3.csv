@@ -1,0 +1,5 @@
+State,Transition_0,Transition_1,Trancition_E
+A,A,B,
+B,C,B,A
+C,,D,B
+D,C,,B

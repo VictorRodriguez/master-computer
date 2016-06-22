@@ -1,0 +1,48 @@
+Name: Obed N Munoz Reynoso
+      A00354393
+
+Answer the following questions. Free format for your answer.
+
+-----------------------------------------------------------------------
+
+Question 1. How big is the phenotype space for the eight-queens problem?
+
+ANSWER:
+Considering the problem of accomotating 8 queens in chess board of 8x8 = 64 squares, we could say that
+we have a phenotype space of:
+
+   	64 * 63 * 62 * 61 * 60 * 59 * 58 * 57 = 178462987637760
+
+But, in a more simple  version of the problem we may consider  justa couple of restrictions:
+     - Only 1 queen per row
+     - Only 1 queen per column
+So, it changes the space in a dramatical way. Once one qeen is colocated, it takes 2 choices of
+the (columns+rows) space. It means that next queen will only have 7 options (considering that each option
+will take 1 column and 1 row). Finally our phenotype space is reduced to:
+
+     8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 8! = 40320
+
+NOTE: The evaluation function would consider the diagonals problem and those where there are conflicts,
+it would apply a penalty policy.
+
+-----------------------------------------------------------------------
+
+Question 2. Try to design an incremental evolutionary algorithm for the eight queens problem.
+That is, a solution must represent a way to place the queens on the chess board one by one.
+How big is the search space in your design?
+
+ANSWER:
+
+-----------------------------------------------------------------------
+
+3. How does the simple strategy we saw in class behaives for this two one-dimensional landscapes?
+
+ANSWER:
+
+-----------------------------------------------------------------------
+
+4. Explore the bevavior of the same strategy on multi-dimensional landscapes such as:
+
+ANSWER:
+
+-----------------------------------------------------------------------

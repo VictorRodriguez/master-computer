@@ -1,0 +1,60 @@
+ Distributed System practices README
+---------------------
+
+  * Introduction
+  * Requirements
+  * Compilation
+  * Execution
+  * Troubleshooting
+  * Maintainers
+
+Introduction
+------------
+
+Distributed computing is a field of computer science that studies distributed
+systems. A distributed system is a software system in which components located
+on networked computers communicate and coordinate their actions by passing
+messages. The components interact with each other in order to achieve a
+common goal. Three significant characteristics of distributed systems are:
+concurrency of components, lack of a global clock, and independent failure of
+components. Examples of distributed systems vary from SOA-based systems to
+massively multiplayer online games to peer-to-peer applications.
+
+
+Requirements
+------------
+
+    -> JDK 
+    -> Linux base OS ( if you want to make your life easier )
+
+
+Compilation
+-----------
+
+In order to create all the .class 
+
+    # make
+
+In order to clean all the .class
+
+    # clean
+
+if you still don't belive your life is easier with a Linux base OS, well in
+order to build you just need to: 
+
+    # cd <directory> javac *.java
+
+Execution
+-----------
+
+Troubleshooting
+---------------
+
+
+Maintainers
+-----------
+
+Victor Rodriguez ( Linux fan boy )
+Obed Munuz ( Serious Cloud fan boy )
+
+vm.rod25@gmail.com

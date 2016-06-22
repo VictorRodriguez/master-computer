@@ -1,0 +1,11 @@
+module IDL_module
+{
+    interface IDL_interface{
+        oneway void shutdown();
+        typedef sequence<long> Array;
+        typedef sequence<Array> Matrix;
+        Matrix sendMatrix(in Array data);
+    };
+
+
+};

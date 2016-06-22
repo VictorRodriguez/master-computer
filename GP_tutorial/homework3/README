@@ -1,0 +1,16 @@
+    This patch add the first part of the homework to find the min of the Ackley
+    Function. The way to run it in an optimal way is:
+
+        python basic_ga.py --population 60 --iterations 40000
+
+
+    For the Evolutionary strategy the command is as follows: 
+
+        python es.py --min -30 --max 30 -n 30 -g 1000
+
+    This will generate a data.dat file with the generation,value. In order to plot
+    it we provide the ploter:
+
+        python file_plot.py
+
+    Is necesary to install extralibraries as numpy and matplotlib.pyplot

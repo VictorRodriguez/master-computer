@@ -1,0 +1,125 @@
+MINICHAT practice README
+---------------------
+  
+  * Introduction
+  * Requirements
+  * Compilation
+  * Execution
+  * Troubleshooting
+  * Maintainers
+
+Introduction
+------------
+
+A network socket is an endpoint of an inter-process communication flow across a
+computer network. These practices try to create the following scenarios: 
+
+    1.  Implement a program in Java, Minichat, having a peer-to-peer 
+        architecture that serves to communicate two threads.
+        Your implementation should only be with TCP sockets.
+
+    2.  Repeat 1) using only UDP sockets.
+
+    3.  Implement 1 but adding an additional thread serving as intermediary
+        between the two communication peers threads; ie all message 
+        communication among peers will be received by the thread broker and 
+        forwarded to the destination peer.
+
+    4. Implement 3 using UDP sockets.
+
+
+Requirements
+------------
+
+    -> JDK 
+    -> Linux base OS ( if you want to make your life easier )
+
+
+Compilation
+-----------
+
+In order to create all the .class 
+
+    # make
+
+In order to clean all the .class
+
+    # clean
+
+if you still don't belive your life is easier with a Linux base OS, well in
+order to build you just need to: 
+
+    # cd <directory> javac *.java
+
+Execution
+-----------
+
+|-- TCP_peer
+
+    [terminal 1]# java TCP_peer
+    [terminal 2]# java TCP_peer
+
+    This program will stablish a comunication betwen the client and server and
+    send funny mesages :) 
+
+|-- UDP_peer
+
+    [terminal 1]# java UDP_peer
+    [terminal 2]# java UDP_peer
+
+    This program will stablish a comunication betwen the client and server and
+    send funny mesages :) 
+
+|-- TCP_multiclients
+
+
+    [terminal 1]# java Server
+    [terminal 2]# java Client <username>
+    [terminal 3]# java Client <username>
+
+    This program will stablish a comunication and then you can type messages
+
+    TODO: If you want to see the incoming message please press ENTER :) 
+    We have a bug on the SW 
+
+    Example: 
+
+        vrodri3@vrodri3-mobl2 TCP_multiclients $ java Client uno
+        We got accepted
+        Enter input:hola como estas
+        MESSAGE uno: hola como estas
+
+        Enter input:
+        MESSAGE dos: no entiendo nada
+        Enter input:
+
+        vrodri3@vrodri3-mobl2 TCP_multiclients $ java Client dos
+        We got accepted
+        Enter input:no entiendo nada
+        MESSAGE dos: no entiendo nada
+        Enter input:
+
+
+|-- UDP_multiclients
+
+
+    [terminal 1]# java Server
+    [terminal 2]# java Client <username>
+    [terminal 3]# java Client <username>
+
+    This program will stablish a comunication and then you can type messages
+
+Troubleshooting
+---------------
+
+The UDP_multiserver is not complete , it:
+
+    -> Compile :)
+    -> Clients send data to server
+    -> Server can broadcast back the information to the clients
+
+Maintainers
+-----------
+
+Victor Rodriguez ( Linux fan boy ) 
+vm.rod25@gmail.com

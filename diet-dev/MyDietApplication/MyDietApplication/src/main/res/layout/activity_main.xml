@@ -1,0 +1,121 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    tools:ignore="MergeRootFrame"
+    android:foregroundGravity="center_vertical|center_horizontal">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|top">
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/imageView"
+                    android:src="@drawable/plato_buen_comer"
+                    android:layout_column="1"
+                    android:layout_weight="1" />
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="100dip"
+                    android:id="@+id/progressBar"
+                    android:layout_column="2"
+                    android:max="3000"
+                    android:progress="1000"
+                    android:indeterminate="false"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Calories ( 0 - 3000 ) "
+            android:id="@+id/textView"
+            android:layout_gravity="right" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:id="@+id/newEntry"
+            android:src="@drawable/m_new_entry"
+            android:clickable="false"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addMeal"
+                android:src="@drawable/m_new_meal"
+                android:background="@null"
+                android:layout_gravity="center" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addingredient"
+                android:src="@drawable/m_new_ing"
+                android:background="@null"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/viewRec"
+                android:src="@drawable/m_view_rec"
+                android:background="@null"
+                android:layout_gravity="center" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/viewProf"
+                android:src="@drawable/m_prof"
+                android:background="@null"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

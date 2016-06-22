@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_sgDVsDuSEeOea-LKttTgHw" name="Model">
+  <ownedComment xmi:id="_Lcz4oDweEeO_lq8yZvLOvA">
+    <body>getreport(type)&#xD;
+	if Daily &#xD;
+		..&#xD;
+	if Weekly&#xD;
+		...&#xD;
+	else:&#xD;
+		error</body>
+  </ownedComment>
+  <ownedComment xmi:id="_HEeoYD89EeOXWIni4HKtxQ">
+    <body>Meals.calcualate()&#xD;
+If Meals.caloricValue:&#xD;
+return Meals.caloricValue&#xD;
+else:&#xD;
+#Calculatte value by Ingredients iteration&#xD;
+	for ingredient in infredients []&#xD;
+	Meals.caloricValue += Ingredient.caloricvalue&#xD;
+	return Meals.caloricValue</body>
+  </ownedComment>
+  <ownedComment xmi:id="_bNIGwD8_EeOXWIni4HKtxQ">
+    <body>Record.addingredient(portion,Ingredient.ID)&#xD;
+&#xD;
+Record.addmeal(Meal.ID)&#xD;
+	&#xD;
+</body>
+  </ownedComment>
+  <packageImport xmi:id="_sgDVsTuSEeOea-LKttTgHw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_uJZ5IDuSEeOea-LKttTgHw" name="Ingredient">
+    <generalization xmi:id="__EFcIDuTEeOea-LKttTgHw" general="__DYRgDuTEeOea-LKttTgHw"/>
+    <ownedAttribute xmi:id="_OchlwDuUEeOea-LKttTgHw" name="Property1"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="__DYRgDuTEeOea-LKttTgHw" name="Interface1"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RNTrUDuUEeOea-LKttTgHw" name="Ingredient">
+    <ownedAttribute xmi:id="_ZhtKcDuUEeOea-LKttTgHw" name="  name" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_jhOHkDuUEeOea-LKttTgHw" name="  caloricValue" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_MusjQDuaEeOea-LKttTgHw" name="meals" type="_8KzFYDuUEeOea-LKttTgHw" association="_MuuYcDuaEeOea-LKttTgHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MusjQjuaEeOea-LKttTgHw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MusjQTuaEeOea-LKttTgHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Sf7EIDwgEeO_lq8yZvLOvA" name="receord" type="_Su6X0DwfEeO_lq8yZvLOvA" association="_Sf85UDwgEeO_lq8yZvLOvA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Sf7rMDwgEeO_lq8yZvLOvA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Sf7EITwgEeO_lq8yZvLOvA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_5mTpwDwgEeO_lq8yZvLOvA" name="  id" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_wSJcYDuUEeOea-LKttTgHw" name="getName">
+      <ownedParameter xmi:id="_du4jQDuZEeOea-LKttTgHw" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_yMN8YDuUEeOea-LKttTgHw" name="getCalories">
+      <ownedParameter xmi:id="_gEGuMDuZEeOea-LKttTgHw" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1-BaEDuUEeOea-LKttTgHw" name="setName"/>
+    <ownedOperation xmi:id="_3GNKIDuUEeOea-LKttTgHw" name="setCalories"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_W2gvgDuUEeOea-LKttTgHw" name="PrimitiveType1"/>
+  <packagedElement xmi:type="uml:Constraint" xmi:id="_XycMQDuUEeOea-LKttTgHw" name="Constraint1">
+    <specification xmi:type="uml:LiteralString" xmi:id="_XyczUDuUEeOea-LKttTgHw" value=""/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8KzFYDuUEeOea-LKttTgHw" name="Meals">
+    <ownedComment xmi:id="_9Vq3cDwgEeO_lq8yZvLOvA">
+      <body>http://www.youtube.com/watch?v=WbzLibDgOkU</body>
+    </ownedComment>
+    <ownedAttribute xmi:id="__y6bkDuUEeOea-LKttTgHw" name="name" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_AF63IDuVEeOea-LKttTgHw" name="caloricValue" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_AYrbEDuVEeOea-LKttTgHw" name="ingredients" visibility="private" type="_uJZ5IDuSEeOea-LKttTgHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q-kZ0DuWEeOea-LKttTgHw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q-sVoDuWEeOea-LKttTgHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_k69RgDwfEeO_lq8yZvLOvA" name="record" type="_Su6X0DwfEeO_lq8yZvLOvA" association="_k6_twDwfEeO_lq8yZvLOvA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k69RgjwfEeO_lq8yZvLOvA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k69RgTwfEeO_lq8yZvLOvA" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_-RQ9ADwgEeO_lq8yZvLOvA" name=" id" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_pOfhgDuWEeOea-LKttTgHw" name="getCalories">
+      <ownedParameter xmi:id="_Ab1f8DuZEeOea-LKttTgHw" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_pptd4DuWEeOea-LKttTgHw" name="getName">
+      <ownedParameter xmi:id="_98r88DuYEeOea-LKttTgHw" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_p4mOcDuWEeOea-LKttTgHw" name="getIngredients">
+      <ownedParameter xmi:id="_7xFdgDuXEeOea-LKttTgHw" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EEList"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_qHVOADuWEeOea-LKttTgHw" name="setName"/>
+    <ownedOperation xmi:id="_qXtMUDuWEeOea-LKttTgHw" name="setCalories">
+      <ownedParameter xmi:id="_xtLvoDuXEeOea-LKttTgHw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_qm1NcDuWEeOea-LKttTgHw" name="modyMeal"/>
+    <ownedOperation xmi:id="_Qc-TMDuXEeOea-LKttTgHw" name="deleteMeal"/>
+    <ownedOperation xmi:id="_SMr9UDuXEeOea-LKttTgHw" name="calculateCalories" visibility="public">
+      <ownedParameter xmi:id="_tZaNUDuXEeOea-LKttTgHw" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_oVc5UDuZEeOea-LKttTgHw" name="addIngredient"/>
+    <ownedOperation xmi:id="_7qdaMDwdEeO_lq8yZvLOvA" name="`"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_0Foi0DuZEeOea-LKttTgHw"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_MuuYcDuaEeOea-LKttTgHw" name="ingredient_meals_1" memberEnd="_MuuYcTuaEeOea-LKttTgHw _MusjQDuaEeOea-LKttTgHw">
+    <ownedEnd xmi:id="_MuuYcTuaEeOea-LKttTgHw" name="ingredient" type="_RNTrUDuUEeOea-LKttTgHw" association="_MuuYcDuaEeOea-LKttTgHw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MuuYczuaEeOea-LKttTgHw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MuuYcjuaEeOea-LKttTgHw" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Su6X0DwfEeO_lq8yZvLOvA" name="Record">
+    <ownedAttribute xmi:id="_aF_TEDwfEeO_lq8yZvLOvA" name="meals []" visibility="private" type="_8KzFYDuUEeOea-LKttTgHw"/>
+    <ownedAttribute xmi:id="_ai5RgDwfEeO_lq8yZvLOvA" name="ingredients [(portion,Ingredient)..]" visibility="private" type="_RNTrUDuUEeOea-LKttTgHw"/>
+    <ownedAttribute xmi:id="_a4kmkDwfEeO_lq8yZvLOvA" name="caloricValue" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_bNyBkDwfEeO_lq8yZvLOvA" name="date" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_bkwXIDwfEeO_lq8yZvLOvA" name="Property5"/>
+    <ownedAttribute xmi:id="_hheQYDwjEeO_lq8yZvLOvA" name="report" type="_xU138DwiEeO_lq8yZvLOvA" association="_hhfegDwjEeO_lq8yZvLOvA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hheQYjwjEeO_lq8yZvLOvA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hheQYTwjEeO_lq8yZvLOvA" value="*"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_Um7pYDwfEeO_lq8yZvLOvA" name="calculateCaloricValue"/>
+    <ownedOperation xmi:id="_U2WlcDwfEeO_lq8yZvLOvA" name="getName"/>
+    <ownedOperation xmi:id="_VFtQEDwfEeO_lq8yZvLOvA" name="getIngredient"/>
+    <ownedOperation xmi:id="_VT3n4DwfEeO_lq8yZvLOvA" name="getCaloricValue"/>
+    <ownedOperation xmi:id="_Vjq-cDwfEeO_lq8yZvLOvA" name="getDate"/>
+    <ownedOperation xmi:id="_V1iKgDwfEeO_lq8yZvLOvA" name="addIngredient"/>
+    <ownedOperation xmi:id="_WFeD8DwfEeO_lq8yZvLOvA" name="addMeal"/>
+    <ownedOperation xmi:id="_2rISEDwgEeO_lq8yZvLOvA" name="setDate"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_k6_twDwfEeO_lq8yZvLOvA" name="meals_record_1" memberEnd="_k6_twTwfEeO_lq8yZvLOvA _k69RgDwfEeO_lq8yZvLOvA">
+    <ownedEnd xmi:id="_k6_twTwfEeO_lq8yZvLOvA" name="meals" type="_8KzFYDuUEeOea-LKttTgHw" association="_k6_twDwfEeO_lq8yZvLOvA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k6_twzwfEeO_lq8yZvLOvA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k6_twjwfEeO_lq8yZvLOvA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Sf85UDwgEeO_lq8yZvLOvA" name="ingredient_record_1" memberEnd="_Sf9gYDwgEeO_lq8yZvLOvA _Sf7EIDwgEeO_lq8yZvLOvA">
+    <ownedEnd xmi:id="_Sf9gYDwgEeO_lq8yZvLOvA" name="ingredient" type="_RNTrUDuUEeOea-LKttTgHw" association="_Sf85UDwgEeO_lq8yZvLOvA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Sf9gYjwgEeO_lq8yZvLOvA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Sf9gYTwgEeO_lq8yZvLOvA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xU138DwiEeO_lq8yZvLOvA" name="Report">
+    <ownedAttribute xmi:id="_ZG_-cDwjEeO_lq8yZvLOvA" name="records []: Record" type="_Su6X0DwfEeO_lq8yZvLOvA"/>
+    <ownedAttribute xmi:id="_d4MFMD9HEeOHFrdqWA_uiQ" name="  type" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#String"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_YqrO0DwjEeO_lq8yZvLOvA" name="getReport"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_hhfegDwjEeO_lq8yZvLOvA" name="record_report_1" memberEnd="_hhfegTwjEeO_lq8yZvLOvA _hheQYDwjEeO_lq8yZvLOvA">
+    <ownedEnd xmi:id="_hhfegTwjEeO_lq8yZvLOvA" name="receord" type="_Su6X0DwfEeO_lq8yZvLOvA" association="_hhfegDwjEeO_lq8yZvLOvA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hhfegzwjEeO_lq8yZvLOvA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hhfegjwjEeO_lq8yZvLOvA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_31u0AD9BEeOXWIni4HKtxQ" name="DAO Ingredients"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_DThtAD9CEeOXWIni4HKtxQ" name="DAO_Ingredients">
+    <generalization xmi:id="_lynakD9GEeOHFrdqWA_uiQ" general="_AHpU8D9EEeOHFrdqWA_uiQ"/>
+    <ownedAttribute xmi:id="_YRzdwD9CEeOXWIni4HKtxQ" name="dn_name"/>
+    <ownedAttribute xmi:id="_kbInED9CEeOXWIni4HKtxQ" name="driver_name"/>
+    <ownedAttribute xmi:id="_ZsQ0ID9DEeOHFrdqWA_uiQ" name="QueryModify" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_nHo0ID9DEeOHFrdqWA_uiQ" name="QuerySearch" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_p4DtUD9DEeOHFrdqWA_uiQ" name="ConeccionDB" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_gFyskD9EEeOHFrdqWA_uiQ" name="QueryCreate" type="_AHpU8D9EEeOHFrdqWA_uiQ"/>
+    <ownedAttribute xmi:id="_XQfN4D9GEeOHFrdqWA_uiQ" name="ingredient" type="_RNTrUDuUEeOea-LKttTgHw" association="_XQhDED9GEeOHFrdqWA_uiQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XQfN4j9GEeOHFrdqWA_uiQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XQfN4T9GEeOHFrdqWA_uiQ" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_Sf5JgD9CEeOXWIni4HKtxQ" name="modifyIngredient"/>
+    <ownedOperation xmi:id="_TrL38D9CEeOXWIni4HKtxQ" name="Operation1"/>
+    <ownedOperation xmi:id="_f2Qe8D9IEeOHFrdqWA_uiQ" name="addIngredient"/>
+    <ownedOperation xmi:id="_kwlD4D9IEeOHFrdqWA_uiQ" name="searchIngrdient"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_AHpU8D9EEeOHFrdqWA_uiQ" name="Conection DB">
+    <ownedAttribute xmi:id="_HzC6YD9EEeOHFrdqWA_uiQ" name="db_name" visibility="private"/>
+    <ownedAttribute xmi:id="_IMFFcD9EEeOHFrdqWA_uiQ" name="driver_name" visibility="private"/>
+    <ownedAttribute xmi:id="_IfFhAD9EEeOHFrdqWA_uiQ" name=""/>
+    <ownedAttribute xmi:id="_dZRKAD9GEeOHFrdqWA_uiQ" name="dAO_Records" type="_FzhdMD9FEeOHFrdqWA_uiQ" association="_dZS_MD9GEeOHFrdqWA_uiQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dZRxET9GEeOHFrdqWA_uiQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dZRxED9GEeOHFrdqWA_uiQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_eNNIYD9GEeOHFrdqWA_uiQ" name="dAO_meals" type="_aIj5ID9EEeOHFrdqWA_uiQ" association="_eNO9kD9GEeOHFrdqWA_uiQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eNNIYj9GEeOHFrdqWA_uiQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eNNIYT9GEeOHFrdqWA_uiQ" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_Eg5NID9EEeOHFrdqWA_uiQ" name="get_conection" visibility="protected"/>
+    <ownedOperation xmi:id="_E6Cs8D9EEeOHFrdqWA_uiQ" name="close_conection" visibility="protected"/>
+    <ownedOperation xmi:id="_FSxWAD9EEeOHFrdqWA_uiQ" name="Operation3"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aIj5ID9EEeOHFrdqWA_uiQ" name="DAO_meals">
+    <generalization xmi:id="_lHNtID9GEeOHFrdqWA_uiQ" general="_AHpU8D9EEeOHFrdqWA_uiQ"/>
+    <ownedAttribute xmi:id="_kI-OID9EEeOHFrdqWA_uiQ" name="QueryCreate" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_kezUMD9EEeOHFrdqWA_uiQ" name="QuerySearch" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_k44BED9EEeOHFrdqWA_uiQ" name="QueryModify" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qiyP4D9EEeOHFrdqWA_uiQ" name="ConectionDB" type="_AHpU8D9EEeOHFrdqWA_uiQ"/>
+    <ownedAttribute xmi:id="_b40q8D9GEeOHFrdqWA_uiQ" name="meals" type="_8KzFYDuUEeOea-LKttTgHw" association="_b415ED9GEeOHFrdqWA_uiQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b40q8j9GEeOHFrdqWA_uiQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_b40q8T9GEeOHFrdqWA_uiQ" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_sykhMD9EEeOHFrdqWA_uiQ" name="modifyMeal"/>
+    <ownedOperation xmi:id="_QC1pgD9IEeOHFrdqWA_uiQ" name="addMeal"/>
+    <ownedOperation xmi:id="_VwvAcD9IEeOHFrdqWA_uiQ" name="searchMeal"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FzhdMD9FEeOHFrdqWA_uiQ" name="DAO_Records">
+    <generalization xmi:id="_kUxjkD9GEeOHFrdqWA_uiQ" general="_AHpU8D9EEeOHFrdqWA_uiQ"/>
+    <ownedAttribute xmi:id="_hceWMD9FEeOHFrdqWA_uiQ" name="QueryCreate" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_huLxQD9FEeOHFrdqWA_uiQ" name="QuerySearch" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_iETyQD9FEeOHFrdqWA_uiQ" name="QueryModify" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_iVLf0D9FEeOHFrdqWA_uiQ" name="ConectionDB" type="_AHpU8D9EEeOHFrdqWA_uiQ"/>
+    <ownedAttribute xmi:id="_ceZdMD9GEeOHFrdqWA_uiQ" name="receord" type="_Su6X0DwfEeO_lq8yZvLOvA" association="_cearUD9GEeOHFrdqWA_uiQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ceZdMj9GEeOHFrdqWA_uiQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ceZdMT9GEeOHFrdqWA_uiQ" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_eKj5gD9FEeOHFrdqWA_uiQ" name="modifyRecord"/>
+    <ownedOperation xmi:id="_FvJMID9IEeOHFrdqWA_uiQ" name="addRecord"/>
+    <ownedOperation xmi:id="_MgaroD9IEeOHFrdqWA_uiQ" name="searhRecord"/>
+    <ownedOperation xmi:id="_TNMssD9IEeOHFrdqWA_uiQ" name="deleteRecord"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_XQhDED9GEeOHFrdqWA_uiQ" name="dAO_Ingredients_ingredient_1" memberEnd="_XQhDET9GEeOHFrdqWA_uiQ _XQfN4D9GEeOHFrdqWA_uiQ">
+    <ownedEnd xmi:id="_XQhDET9GEeOHFrdqWA_uiQ" name="dAO_Ingredients" type="_DThtAD9CEeOXWIni4HKtxQ" association="_XQhDED9GEeOHFrdqWA_uiQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XQhDEz9GEeOHFrdqWA_uiQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XQhDEj9GEeOHFrdqWA_uiQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_b415ED9GEeOHFrdqWA_uiQ" name="dAO_meals_meals_1" memberEnd="_b415ET9GEeOHFrdqWA_uiQ _b40q8D9GEeOHFrdqWA_uiQ">
+    <ownedEnd xmi:id="_b415ET9GEeOHFrdqWA_uiQ" name="dAO_meals" type="_aIj5ID9EEeOHFrdqWA_uiQ" association="_b415ED9GEeOHFrdqWA_uiQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b415Ez9GEeOHFrdqWA_uiQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_b415Ej9GEeOHFrdqWA_uiQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_cearUD9GEeOHFrdqWA_uiQ" name="dAO_Records_receord_1" memberEnd="_cearUT9GEeOHFrdqWA_uiQ _ceZdMD9GEeOHFrdqWA_uiQ">
+    <ownedEnd xmi:id="_cearUT9GEeOHFrdqWA_uiQ" name="dAO_Records" type="_FzhdMD9FEeOHFrdqWA_uiQ" association="_cearUD9GEeOHFrdqWA_uiQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cearUz9GEeOHFrdqWA_uiQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cearUj9GEeOHFrdqWA_uiQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_dZS_MD9GEeOHFrdqWA_uiQ" name="coneccion DB_dAO_Records_1" memberEnd="_dZS_MT9GEeOHFrdqWA_uiQ _dZRKAD9GEeOHFrdqWA_uiQ">
+    <ownedEnd xmi:id="_dZS_MT9GEeOHFrdqWA_uiQ" name="coneccion DB" type="_AHpU8D9EEeOHFrdqWA_uiQ" association="_dZS_MD9GEeOHFrdqWA_uiQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dZS_Mz9GEeOHFrdqWA_uiQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dZS_Mj9GEeOHFrdqWA_uiQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_eNO9kD9GEeOHFrdqWA_uiQ" name="coneccion DB_dAO_meals_1" memberEnd="_eNO9kT9GEeOHFrdqWA_uiQ _eNNIYD9GEeOHFrdqWA_uiQ">
+    <ownedEnd xmi:id="_eNO9kT9GEeOHFrdqWA_uiQ" name="coneccion DB" type="_AHpU8D9EEeOHFrdqWA_uiQ" association="_eNO9kD9GEeOHFrdqWA_uiQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eNO9kz9GEeOHFrdqWA_uiQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eNO9kj9GEeOHFrdqWA_uiQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

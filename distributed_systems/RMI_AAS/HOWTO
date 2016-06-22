@@ -1,0 +1,77 @@
+###################################################
+# @authors      Victor Rodriguez, Obed N Munoz
+# @school       ITESM - Master in Computer Sciences
+# @class        Distributed Systems
+# @profressor   Marcos de Alba
+# @practice     Homework3 - RMI MergeSort
+# @description  MergeSort implementation with RMI
+###################################################
+
+This document explains how this MergeSort implentation can
+run on a Local network using Virtual Machines
+
+Requirements:
+- VirtualBox
+- Vagrant (VMs orchestration) (recommended)
+  For auto-creating VMs in VirtualBox you can run:
+      git clone https://github.com/obedmr/vagrant_javarmi
+      cd vagrant_javarmi
+      vagrant up
+- Java Development Kit (JDK) in all VMs
+- 8 Worker VMs
+  - IPs under the follow range:
+    10.0.0.11 --> 10.0.0.18
+- 1 Server VM
+  - IP: 10.0.0.21
+
+0. Describing each component
+   - MergeSort.java 
+     Generic methods of Merge Sorting algorithm
+   - MergeSortServer.java
+     All the logic that runs in the server
+     a. Reading Parameters (<num_clients> <array_length>)
+     b. Call the parallelMergeSort
+     c. Divide the number of clients (threads) in the available workers (in
+     	this case, we have 8 workers) in parallel
+     d. Once it gets a worker (VM), it sends a portion of the array to sort in
+     	the worker. The communication is through RMI
+   - MergeSortRemote.java
+     Interfaces which defines the available Remote Methods
+   - MergeSortWorker.java
+     Implementation of Remote Sorting that executes Merge Sorting in parallel
+     through a pre-defined number of thread that were sent by parameter in the
+     Remote Invocation
+   - Worker.java
+     Class for Worker's attributes definition like IP address or status.
+   
+1. Compiling the source code
+   cd <srcdir>/
+   javac -cp . -d . *.java
+
+2. Starting The Workers
+   a. Login into each Worker VM and run:
+      cd <srcdir>/
+      rmiregistry &
+      java -cp ./ -Djava.rmi.server.codebase=file:./ -Djava.rmi.server.hostname=<worker_ip> MergeSortWorker
+
+3. Running Server
+   a. Login into the server VM and run:
+      cd <srcdir>/
+      java MergeSortServer <number_clients> <array_length>
+   b. That's all, you should be able to see an output with the following format:
+     
+      <number of clients(threads)> <array_length> <total_time> <one_direction_transfer_time>
+      
+      Examples:
+      [vagrant@rmiserver RMI_AAS]$ java MergeSortServer 1 100
+           1        100    158     13
+      [vagrant@rmiserver RMI_AAS]$ java MergeSortServer 100 1000
+         100       1000    247     14
+      [vagrant@rmiserver RMI_AAS]$ java MergeSortServer 1000 1000
+        1000       1000    367     15
+      [vagrant@rmiserver RMI_AAS]$ java MergeSortServer 2000 10000
+        2000      10000    383     15
+      [vagrant@rmiserver RMI_AAS]$ java MergeSortServer 3000 100000
+        3000     100000    664     25
+      [vagrant@rmiserver RMI_AAS]$ java MergeSortServer 10000 1000000
+       10000    1000000   2195    117

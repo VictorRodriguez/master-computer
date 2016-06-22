@@ -1,0 +1,119 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/vp_title"
+            android:src="@drawable/vp_title"
+            android:layout_gravity="center"
+            android:background="@null" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="108dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vp_male_img"
+                android:src="@drawable/vp_male"
+                android:layout_marginLeft="-22dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vp_female_img"
+                android:src="@drawable/vp_female" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="59dp"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Male"
+                android:id="@+id/vp_male_label" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vp_gender"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Female"
+                android:id="@+id/vp_gender_label" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Activity intensity:"
+            android:id="@+id/vp_act_intensity"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="151dp"
+            android:gravity="center"
+            android:layout_marginTop="-22dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sedentary"
+                android:id="@+id/vp_sed_b"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moderate"
+                android:id="@+id/vp_mod_b"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active"
+                android:id="@+id/vp_act_b"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center" />
+        </RadioGroup>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/vp_save"
+            android:src="@drawable/ve_save"
+            android:background="@null"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+</FrameLayout>

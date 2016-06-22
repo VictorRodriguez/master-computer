@@ -1,0 +1,6 @@
+State,Transition_0,Transition_1,Trancition_E
+q0,0,q2,q1
+q1,q0q4,0,q2q3
+q2,0,q4,0
+q3,q4,0,0
+q4,0,0,q3
