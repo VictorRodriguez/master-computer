@@ -1,4 +1,4 @@
-# ITESM master degree
+# ITESM master degree projects
 
 Personal projects developed during the master degree
 
