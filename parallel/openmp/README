@@ -1,0 +1,33 @@
+ercicios.
+1.  Versión  instalada  de  OpenMP
+    (Ejemplo  1)
+    (Calificación  0.5%).
+
+2.  Número de cores disponibles en el equipo, ID actual y número total de threads.
+    (Ejemplo  2)
+    (Calificación  0.5%).
+
+3.  Suma  de  vectores  en  paralelo  (Diapositivas)
+    (Calificación  0.5%)
+
+4. Suma  de  vectores  en  secuencial.  Obtener  tiempos  en  secuencial  y 
+    paralelo y mostrar  tiempos. 
+    (Calificación  0.5%)
+
+5. Contestar  la  siguiente  pregunta:
+    Probar   el   código   de   suma   de   vectores   con  más   threads
+    que   cores   existen   en   la   computadora.   ¿qué   sucede?
+
+    Entregar : respuesta   en   papel   o   enviarlo   en   electrónico   a:  
+    mgsanchez@itesm.mx  .
+    (Calificación  0.5%)
+
+6. Reducir   problema   de   Matriz   Punto
+    Utilizar   la   clausula  reduction
+    (Calificación  0.5%)
+
+7. Multiplicación  de  Matriz Vector
+    (Calificación  1.0%)
+
+8. Multiplicación  de  matriz matriz
+    (Calificación  1.0%)
